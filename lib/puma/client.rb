@@ -153,6 +153,7 @@ module Puma
 
       begin
         data = @io.read_nonblock(CHUNK_SIZE)
+        puts(data)
       rescue Errno::EAGAIN
         return false
       rescue SystemCallError, IOError, EOFError
